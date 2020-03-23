@@ -35,3 +35,30 @@ Migrating to CreateRestaurants (20200323192958)
   [1m[36mRestaurant Load (2.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mRestaurant Load (2.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mRestaurant Load (0.9ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3822488107354209300)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200323195404)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (38.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "fav_cuisine" character varying, "img" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200323195404"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3822488107354209300)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRestaurant Load (9.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Destroy (28.6ms)[0m  [1m[31mDELETE FROM "restaurants" WHERE "restaurants"."id" = $1[0m  [["id", 1]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (1.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "img", "neighborhood", "cuisine", "link", "author", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Birria-Landia"], ["img", "https://infatuation.imgix.net/media/images/reviews/birria-landia/banners/1583177978.64.jpg?auto=format&h=840&w=1336"], ["neighborhood", "Jackson Heights"], ["cuisine", "Tacos/Mexican"], ["link", "https://www.theinfatuation.com/new-york/reviews/birria-landia"], ["author", "Bryan Kim"], ["rating", 8], ["created_at", "2020-03-23 19:58:32.159156"], ["updated_at", "2020-03-23 19:58:32.159156"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (4.0ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "img", "neighborhood", "cuisine", "link", "author", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Bathhouse"], ["img", "https://infatuation.imgix.net/media/images/reviews/bathhouse/banners/1583446028.57.jpg?auto=format&h=840&w=1336"], ["neighborhood", "Williamsburg"], ["cuisine", "Eastern European"], ["link", "https://www.theinfatuation.com/new-york/reviews/bathhouse"], ["author", "Matt Tervooren"], ["rating", 7], ["created_at", "2020-03-23 19:58:32.171055"], ["updated_at", "2020-03-23 19:58:32.171055"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (11.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "fav_cuisine", "img", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jonah"], ["last_name", "Offitzer"], ["email", "joffitzer@gmail.com"], ["fav_cuisine", "Italian"], ["img", "https://www.theinfatuation.com/new-york/reviews/bathhouse"], ["created_at", "2020-03-23 19:58:32.206704"], ["updated_at", "2020-03-23 19:58:32.206704"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
