@@ -40,3 +40,12 @@ jonah = User.create(
     email: "joffitzer@gmail.com", 
     fav_cuisine: "Italian",
     img: "https://www.theinfatuation.com/new-york/reviews/bathhouse")
+
+
+puts "Destroying all Likes"
+Like.destroy_all
+
+puts "Creating Likes"
+like1 = Like.create(
+    user: jonah, 
+    restaurant: bathhouse)
