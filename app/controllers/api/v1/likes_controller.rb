@@ -9,6 +9,10 @@ class Api::V1::LikesController < ApplicationController
         render json: @like, except: [:updated_at]
     end 
 
+    def destroy
+        Like.destroy(params[:id])
+    end 
+
 end
 
 private

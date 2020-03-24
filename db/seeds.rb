@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Destroying all Likes first"
+Like.destroy_all
 
 puts "Destroying all Restaurants"
 Restaurant.destroy_all
@@ -28,6 +30,51 @@ bathhouse = Restaurant.create(
     link: "https://www.theinfatuation.com/new-york/reviews/bathhouse",
     author: "Matt Tervooren",
     rating: 7.3)
+
+la_esquina = Restaurant.create(
+    name: "La Esquina Del Camarón Mexicano", 
+    img: "https://infatuation.imgix.net/media/images/reviews/la-esquina-del-camaron-mexicano/banners/1583335193.18.jpg?auto=format&h=840&w=1336", 
+    neighborhood: "Jackson Heights", 
+    cuisine: "Tacos/Mexican/Seafood",
+    link: "https://www.theinfatuation.com/new-york/reviews/la-esquina-del-camaron-mexicano",
+    author: "Bryan Kim",
+    rating: 7.7)
+
+carbone = Restaurant.create(
+    name: "Carbone", 
+    img: "https://infatuation.imgix.net/media/reviews/carbone/banners/carbone-1005_0.jpg?auto=format&h=840&w=1336", 
+    neighborhood: "Greenwich Village", 
+    cuisine: "Pasta/Italian",
+    link: "https://www.theinfatuation.com/new-york/reviews/carbone",
+    author: "Chris Stang",
+    rating: 9.4)
+
+trapizzino = Restaurant.create(
+    name: "Trapizzino", 
+    img: "https://infatuation.imgix.net/media/images/reviews/trapizzino/banners/1550767524.03.jpg?auto=format&h=840&w=1336", 
+    neighborhood: "Lower East Side", 
+    cuisine: "Italian",
+    link: "https://www.theinfatuation.com/new-york/reviews/trapizzino",
+    author: "Hannah Albertine",
+    rating: 7.7)
+
+sushi_by_m = Restaurant.create(
+    name: "Sushi By M", 
+    img: "https://infatuation.imgix.net/media/images/reviews/sushi-by-m/banners/1552249934.42.jpg?auto=format&h=840&w=1336", 
+    neighborhood: "East Village", 
+    cuisine: "Sushi",
+    link: "https://www.theinfatuation.com/new-york/reviews/sushi-by-m",
+    author: "Bryan Kim",
+    rating: 8.2)
+
+uncle_boons = Restaurant.create(
+    name: "Uncle Boons", 
+    img: "https://infatuation.imgix.net/media/reviews/uncle-boons/banners/Uncle-Boons-1_0.jpg?auto=format&h=840&w=1336", 
+    neighborhood: "Nolita", 
+    cuisine: "Thai",
+    link: "https://www.theinfatuation.com/new-york/reviews/uncle-boons",
+    author: "Katherine Lewin",
+    rating: 9.3)
 
 
 puts "Destroying all Users"
