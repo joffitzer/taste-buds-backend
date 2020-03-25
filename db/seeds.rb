@@ -93,7 +93,7 @@ jeremy = User.create(
     last_name: "Barr", 
     email: "jeremy@gmail.com", 
     fav_cuisine: "Indian",
-    img: "https://www.theinfatuation.com/new-york/reviews/bathhouse")
+    img: "https://images.homedepot-static.com/productImages/a8f9eec2-02f2-4072-9b0a-cdb1a7fe3ebc/svn/multi-roommates-wall-decals-rmk1430gm-64_600.jpg")
 
 david = User.create(
     first_name: "David", 
@@ -107,7 +107,7 @@ michael = User.create(
     last_name: "Seraita", 
     email: "michael@gmail.com", 
     fav_cuisine: "Japanese",
-    img: "https://www.theinfatuation.com/new-york/reviews/bathhouse")
+    img: "https://cdn.shopify.com/s/files/1/0803/3763/products/BuzzBeastKingdom-1.jpg?v=1578262280")
 
 zach = User.create(
     first_name: "Zach", 
