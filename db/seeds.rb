@@ -88,11 +88,51 @@ jonah = User.create(
     fav_cuisine: "Italian",
     img: "https://www.theinfatuation.com/new-york/reviews/bathhouse")
 
+jeremy = User.create(
+    first_name: "Jeremy", 
+    last_name: "Barr", 
+    email: "jeremy@gmail.com", 
+    fav_cuisine: "Indian",
+    img: "https://www.theinfatuation.com/new-york/reviews/bathhouse")
+
+david = User.create(
+    first_name: "David", 
+    last_name: "Habian", 
+    email: "david@gmail.com", 
+    fav_cuisine: "American",
+    img: "https://www.theinfatuation.com/new-york/reviews/bathhouse")
+
+michael = User.create(
+    first_name: "Michael", 
+    last_name: "Seraita", 
+    email: "michael@gmail.com", 
+    fav_cuisine: "Japanese",
+    img: "https://www.theinfatuation.com/new-york/reviews/bathhouse")
+
+zach = User.create(
+    first_name: "Zach", 
+    last_name: "Almer", 
+    email: "zach@gmail.com", 
+    fav_cuisine: "Chinese",
+    img: "https://www.theinfatuation.com/new-york/reviews/bathhouse")
+
 
 puts "Destroying all Likes"
 Like.destroy_all
 
 puts "Creating Likes"
 like1 = Like.create(
-    user: jonah, 
+    user: jeremy, 
     restaurant: bathhouse)
+
+like2 = Like.create(
+    user: jeremy, 
+    restaurant: uncle_boons)
+
+like3 = Like.create(
+    user: michael, 
+    restaurant: carbone)
+
+like4 = Like.create(
+    user: michael, 
+    restaurant: trapizzino)
